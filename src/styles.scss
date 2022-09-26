@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body{
+//         background-image: url('/assets/img.jpg');
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     //width: 100vw;
+//     max-width: 3492px;
+//     height: 100vh;
+//     z-index: -1;
+//     filter: blur(0px);
+//     font-family: 'Montserrat',sans-serif;
+// }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(255, 255, 255, 0.86);
+}

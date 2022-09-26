@@ -1,0 +1,282 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    color: rgb(47, 42, 42);
+    background-color: rgb(255, 255, 255);
+    place-items: center;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+ul {
+    list-style-type: none;
+}
+
+
+.grid-container {
+    display: grid;
+    height: 70vh;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 0.2fr 0.1fr 1fr 0.2fr;
+    grid-template-areas:
+        "header header header"
+        "dates dates dates"
+        "exec king queen"
+        "home-btn home-btn home-btn";
+    font-family: 'Montserrat';
+    font-weight: 800;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+form {
+    position: fixed;
+    margin: 10px;
+    padding: 50px;
+    background-color: #fefefe;
+}
+
+
+/* Modal Content */
+.modal-content {
+
+    position: fixed;
+    margin: 10px;
+    padding: 50px;
+    background-color: #fefefe;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.room-info {
+    font-size: 26px;
+    margin: 20px;
+}
+
+input {
+    border: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 18px;
+    width: 250px;
+    height: 50px;
+    outline: none;
+    margin: 20px;
+}
+
+.book-room {
+    margin: 20px;
+    padding: 6px;
+    border: none;
+    appearance: none;
+    font-size: 18px;
+}
+
+    .book-room:hover {
+        background-color: white;
+        color: #494c5f;
+        border: .4px solid purple;
+        transition: 0.3s ease;
+    }
+
+.full-screen {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(220, 220, 220, 0.9);
+    color: rgb(55, 55, 55);
+    z-index: 1;
+    vertical-align: middle;
+}
+
+
+.home-btn {
+    position: fixed;
+    grid-area: home-btn/2;
+    z-index: 0;
+    top: 0;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 56px;
+    color: red;
+    text-decoration: none
+}
+
+a, .btn-link {
+    color: black;
+}
+
+    a, .btn-link:hover {
+        color: red;
+    }
+
+.grid-container .home-btn:hover {
+    font-size: 52px;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    grid-area: header;
+    word-spacing: 25px;
+    font-size: 68px;
+    padding: 20px;
+    margin: 20px;
+    border-bottom: 3px solid #494c5f;
+}
+
+.dates {
+    text-align: center;
+    grid-area: dates;
+    font-size: 30px;
+    padding: 20px;
+    margin: 4px;
+}
+
+
+.room-price {
+    font-size: 3rem
+}
+
+.dollar {
+    font-size: 1rem;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.room-features .room-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #b02ba1;
+}
+
+.btn {
+    display: block;
+    background-color: #a739a1;
+    padding: 10px;
+    margin-top: 20px;
+    color: #f6f6fe;
+    border-radius: 3px;
+}
+
+.btn-king {
+    display: block;
+    background-color: rgb(138, 75, 187);
+    padding: 10px;
+    margin-top: 20px;
+    color: #f6f6fe;
+    border-radius: 3px;
+}
+
+
+.room .btn:hover {
+    background-color: white;
+    color: #494c5f;
+    border: 1px solid purple;
+    font-weight: 900;
+}
+
+.room .btn-king:hover {
+    background-color: white;
+    color: #494c5f;
+    border: 1px solid purple;
+    font-weight: 900;
+}
+
+.room {
+    text-align: center;
+    padding: 30px 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0.6rem 1.6rem #b3b5c6;
+}
+
+.exec {
+    /* display: flex;
+    justify-content: center; */
+    background-color: rgb(212, 156, 255);
+    /* color:white; */
+
+    grid-area: exec;
+}
+
+.king {
+    background-color: rgb(148, 32, 148);
+    color: white;
+    grid-area: king;
+}
+
+.queen {
+    background-color: darkgrey;
+    grid-area: queen;
+}
+
+
+
+@media only screen and (max-width:533px) {
+
+    .home-btn {
+        margin-left: 2px;
+        grid-area: home-btn/1;
+        z-index: 0;
+        top: 0;
+        margin-top: 1px;
+        padding: 1px;
+        border-radius: 3px;
+        font-size: 46px;
+    }
+
+    .grid-container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: .2fr 2fr 2fr 2fr .2fr;
+        grid-template-areas:
+            "header"
+            "dates"
+            "exec"
+            "king"
+            "queen"
+            "home-btn";
+        font-family: 'Montserrat';
+        font-weight: 800;
+        padding: 10px 5px;
+    }
+
+    .header {
+        text-align: center;
+        grid-area: header;
+        font-size: 48px;
+    }
+
+    .full-screen {
+        overflow-y: hidden;
+    }
+}
+

@@ -1,0 +1,48 @@
+<div class="grid-container bg">
+    <header class="flex-container"><h1>ROOM SEARCH</h1></header>
+
+    <div class="start-date flex-container ">
+
+        <mat-form-field    appearance="fill">
+            
+            <mat-label >Choose check-in date</mat-label>
+            <input matInput [matDatepicker]="picker"
+            [(ngModel)]="preferredDates.startdate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker  #picker></mat-datepicker>
+          </mat-form-field>
+     
+  
+    </div>
+
+    <div class="end-date flex-container">
+        <mat-form-field    appearance="fill">
+            
+            <mat-label >Choose check-out date</mat-label>
+            <input matInput [matDatepicker]="picker2"
+            [(ngModel)]= "preferredDates.enddate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker  #picker2></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="search flex-container">
+        <!-- <button  class="search-btn">
+            <span class="text">Search</span>
+        </button> -->
+        <button (click)="getRooms()" style="max-width: 200px; height: 50px; width: 150px ;font-size: 18px;
+        font-weight: 400;" mat-raised-button>Search</button>
+    </div>
+
+    <footer class="flex-container">
+        <ng-template #elseBlock>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, eos obcaecati. Corporis voluptatum quibusdam laboriosam optio blanditiis itaque expedita fugiat repellendus sit commodi? Inventore ipsa, odio officia iste cumque eum.
+        </p>
+    </ng-template>
+        <p style="color: rgb(161, 0, 0);background:rgb(39, 39, 39)" *ngIf="isError;else elseBlock">Error: There was a problem contacting the server.</p>
+    </footer>
+
+</div>

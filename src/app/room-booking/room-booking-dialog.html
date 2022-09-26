@@ -1,0 +1,18 @@
+<form [formGroup]="ownerForm">
+<mat-dialog-content class="mat-typography dialog">
+    <p>{{roomSelection}}</p>
+   
+    <mat-form-field  appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstname" name="firstname" required matInput [(ngModel)]="firstName">
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastname" name="lastname" required matInput [(ngModel)]="lastName"><br>
+      </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [disabled]="!ownerForm.valid" (click)="BookRoom()" [mat-dialog-close]="true" cdkFocusInitial>Book Room</button>
+</mat-dialog-actions>
+</form>

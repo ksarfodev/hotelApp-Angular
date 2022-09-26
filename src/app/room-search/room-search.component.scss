@@ -1,0 +1,213 @@
+
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(0px);
+}
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "start-date end-date"
+        "search search"
+        "footer footer";
+    font-family: Montserrat;
+    font-weight: 800;
+}
+
+
+
+header {
+    grid-area: header;
+    word-spacing: 25px;
+    font-size: 36px;
+    color:whitesmoke;
+}
+
+.start-date {
+    grid-area: start-date;
+   
+}
+
+.end-date {
+    grid-area: end-date;
+}
+
+.search {
+    grid-area: search;
+    max-height: 70px;
+    max-height: 70px;
+}
+
+.search  button.error {
+    background-color: black;
+    color: rgb(204, 55, 55);
+  }
+
+footer {
+    background: rgba(42,42,42,0.5);
+    grid-area: footer;
+}
+
+p {
+    text-align: center;
+    margin: 20px;
+    color: #EBEBEB;
+    width: 100vw;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+}
+
+
+@media only screen and (max-width:733px) {
+
+    .flex-button {
+        margin: 15px 15px;
+        padding: 0 10px;
+        width: 100px;
+        height: 100px;
+        font-size: 28px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1.5fr 1.5fr 1.5fr 0.1fr;
+        grid-template-areas:
+            "header"
+            "start-date"
+            "end-date"
+            "search"
+            "footer";
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.flex-button {
+    /* background-color: rgb(156, 156, 156); */
+    margin: 5px 5px;
+    padding: 0 5px;
+    width: 200px;
+    font-size: 28px;
+}
+
+
+/* CSS */
+.search-btn {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-width: 0;
+    box-sizing: border-box;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1em;
+    opacity: 1;
+    outline: 0;
+    padding: 1.5em 2.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    text-transform: uppercase;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    margin: 10px 10px;
+    padding: 0 10px;
+    width: 200px;
+}
+
+    .search-btn:active {
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+
+    .search-btn:before {
+        animation: opacityFallbackOut .5s step-end forwards;
+        backface-visibility: hidden;
+        background-color: #EBEBEB;
+        clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateZ(0);
+        transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), .5s cubic-bezier(.165, 0.84, 0.44, 1);
+        width: 100%;
+    }
+
+    .search-btn:hover:before {
+        animation: opacityFallbackIn 0s step-start forwards;
+        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+    }
+
+    .search-btn:after {
+        background-color: #FFFFFF;
+    }
+
+    .search-btn span {
+        z-index: 1;
+        position: relative;
+    }
+
+.flex-dates {
+    background-color: white;
+    margin: 2px;
+    padding: 0px;
+    width: 400px;
+    text-align: center;
+}
+
+.bg{
+        background-image: url('/assets/img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 3492px;
+    height: 100vh;
+  //  z-index: -1;
+    filter: blur(0px);
+    font-family: 'Montserrat',sans-serif;
+}

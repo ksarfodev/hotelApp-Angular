@@ -1,0 +1,101 @@
+<div class="grid-container">
+    <div class="header">Available Rooms</div>
+    <div *ngIf="preferredDates" class="dates"> {{preferredDates.startdate.toLocaleDateString('en-US')}} - 
+        {{preferredDates.enddate.toLocaleDateString('en-US')}}</div>
+
+
+
+            <div  *ngIf="isExecAvailable; else exec_elseBlock" class="room exec">
+                <h2 class="room-heading">Executive Suite</h2>
+                <h3 class="room-price"><span class="dollar">$</span>205</h3>
+                <ul class="room-features">
+                    <li class="room-item">Pullout couch</li>
+                    <li class="room-item">Whirlpool tub</li>
+                    <li class="room-item">Full-size Fridge</li>
+                </ul>
+                <a  (click)="setRoomType(3);openDialog()" id="execBtn" class="btn">Book Now</a>
+            </div>
+        
+       
+        <ng-template #exec_elseBlock>
+            <div style="opacity:20%" class="room exec">
+                <h2 class="room-heading">Executive Suite</h2>
+                <h3 class="room-price"><span class="dollar">$</span>205</h3>
+                <ul class="room-features">
+                    <li class="room-item">Pullout couch</li>
+                    <li class="room-item">Whirlpool tub</li>
+                    <li class="room-item">Full-size Fridge</li>
+                </ul>
+                <a id="execBtn"> Booked</a>
+            </div>
+        </ng-template>
+
+        
+     
+            <div *ngIf="isKingAvailable; else king_elseBlock" class="room king">
+                <h2 class="room-heading">King Beds</h2>
+                <h3 class="room-price"><span class="dollar">$</span>100</h3>
+                <ul class="room-features">
+                    <li class="room-item">Work Desk</li>
+                    <li class="room-item">1 Bath</li>
+                    <li class="room-item">Safe</li>
+                </ul>
+                <a (click)="setRoomType(1);openDialog()" id="kingBtn" class="btn-king">Book Now</a>
+            </div>
+
+
+            <ng-template #king_elseBlock>
+       
+            <div style="opacity:20%" class="room king">
+                <h2 class="room-heading">King Beds</h2>
+                <h3 class="room-price"><span class="dollar">$</span>100</h3>
+                <ul class="room-features">
+                    <li class="room-item">Work Desk</li>
+                    <li class="room-item">1 Bath</li>
+                    <li class="room-item">Safe</li>
+                </ul>
+                <a id="kingBtn">Booked</a>
+            </div>
+        </ng-template>
+        
+
+     
+            <div *ngIf="isQueenAvailable; else queen_elseBlock"  class="room queen">
+                <h2 class="room-heading">2 Queen Beds</h2>
+                <h3 class="room-price"><span class="dollar">$</span>115</h3>
+                <ul class="room-features">
+                    <li class="room-item">WiFi</li>
+                    <li class="room-item">Blackout blinds</li>
+                    <li class="room-item">Video Games</li>
+                </ul>
+                <a (click)="setRoomType(2);openDialog()" id="queenBtn" class="btn">Book Now</a>
+
+            </div>
+        
+
+            <ng-template #queen_elseBlock>
+            <div style="opacity:20%" class="room queen">
+                <h2 class="room-heading">2 Queen Beds</h2>
+                <h3 class="room-price"><span class="dollar">$</span>115</h3>
+                <ul class="room-features">
+                    <li class="room-item">WiFi</li>
+                    <li class="room-item">Blackout blinds</li>
+                    <li class="room-item">Video Games</li>
+                </ul>
+                <a id="queenBtn">Booked</a>
+
+            </div>
+        </ng-template>
+
+     
+    <!-- <div class="home-btn">
+        <a >&times;</a>
+    </div> -->
+    <div class="home-btn">
+    <button routerLink="/room-search" mat-fab color="warn" aria-label="Navigate to room-search">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+
+  
+</div>
