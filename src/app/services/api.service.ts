@@ -14,8 +14,8 @@ export class ApiService {
 
   constructor(private http: HttpClient, private calendarSevice: CalendarService) { }
 
- // baseURL: string = "https://localhost:7077/api/";
- baseURL:string = "https://hotelappapi.azure-api.net/v1/api/";
+  baseURL: string = "https://localhost:7077/api/";
+
 
   //preferredDates?: PreferredDates;
 
