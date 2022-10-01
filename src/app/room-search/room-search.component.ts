@@ -52,6 +52,7 @@ isError?:boolean;
       (response) =>{
       console.log(response)
       this.apiService.listOfRooms = response;
+      
       if(this.apiService.listOfRooms)
       {
         this.errorMessage  = "";

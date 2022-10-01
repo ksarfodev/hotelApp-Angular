@@ -150,13 +150,14 @@ selectedRoom?:SelectedRoom;
     console.log(this.selectedRoom);
 
     this.apiService.bookGuest(this.selectedRoom)
-    .subscribe(data =>{
-      console.log(data)
+    .subscribe(
+      (response) =>{
+      console.log(response)
       this.isError = false;
       this.router.navigateByUrl('room-search');
     },
     (error) =>{
-      console.error('error........')
+      console.error(error)
       this.errorMessage = error;
       this.isError = true;
     });

@@ -14,7 +14,9 @@ export class ApiService {
 
   constructor(private http: HttpClient, private calendarSevice: CalendarService) { }
 
-  baseURL: string = "https://localhost:7077/api/";
+  //baseURL: string = "https://localhost:7077/api/";
+  roomSearchFunctionUrl:string ="https://hotelappazurefunction20220928155452.azurewebsites.net/api/RoomSearch?code=RjqIpz8OCSKwFVBlU5m9fO0sk8aDxdX9-UOZ_5Kk-W2gAzFuUnnlCA==";
+  bookingsFunctionUrl:string = "https://hotelappazurefunction20220928155452.azurewebsites.net/api/Bookings?code=aT-EowUWQBMpFsQiH18SDpfER21dHYC-NI3eKVgXdIExAzFuH9HlsQ==";
 
 
   //preferredDates?: PreferredDates;
@@ -34,13 +36,14 @@ export class ApiService {
 
   getAvailableRooms(preferredDates?: PreferredDates):Observable<AvailableRooms[]> {
 
-    console.log('getRooms'+this.baseURL+'roomsearch')
+    //console.log('getRooms'+this.baseURL+'roomsearch')
+    console.log('getRooms ' + this.roomSearchFunctionUrl)
     console.log("Api call made.");
 
     const headers = {'content-type':'application/json','Access-Control-Allow-Origin': '*'};
     const body = JSON.stringify(preferredDates);
 
-    return this.http.post<AvailableRooms[]>(this.baseURL+ 'roomsearch',body,
+    return this.http.post<AvailableRooms[]>(this.roomSearchFunctionUrl,body,
     {
         'headers':headers
     })
@@ -50,22 +53,24 @@ export class ApiService {
         throw err;
       })
     );
-
-  
   }
     
   bookGuest(selectedRoom?: SelectedRoom):Observable<any> {
 
-    console.log('bookguest' + this.baseURL+'bookings')
+    console.log('bookguest' + this.bookingsFunctionUrl)
     console.log("Api call made.");
 
     const headers = {'content-type':'application/json','Access-Control-Allow-Origin': '*'};
     const body = JSON.stringify(selectedRoom);
 
-    return this.http.post(this.baseURL+ 'bookings',body,
+    return this.http.post(this.bookingsFunctionUrl,body,
+
     {
-        'headers':headers
-    })
+      'headers':headers,responseType:'text'
+    }
+
+ 
+    )
     .pipe(
       catchError((err) => {
         console.error(err);
@@ -75,8 +80,6 @@ export class ApiService {
 
   
   }
-    
-
   }
 
 
