@@ -1,5 +1,8 @@
 # HotelNg
 
+### Live Demo
+https://thankful-smoke-010a42f0f.2.azurestaticapps.net/
+
 This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 It has been upgraded to version 15.1.4.
 
