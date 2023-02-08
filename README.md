@@ -6,7 +6,7 @@ It has been upgraded to version 15.1.4.
 Some notes regarding upgrade:
 1. Run > npm i
 2. Run > ng update @angular/core@15 @angular/cli@15
-Although Angular Material is used, ng update @angular/material@15 was not exectued while upgrading from version 14 to 15.
+3. Although Angular Material is used, ng update @angular/material@15 was not exectued while upgrading from version 14 to 15.
 https://update.angular.io/?l=3&v=14.0-15.0
 
 ## Development server
