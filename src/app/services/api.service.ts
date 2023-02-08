@@ -15,9 +15,13 @@ export class ApiService {
     private calendarSevice: CalendarService
   ) {}
 
- 
-  roomSearchFunctionUrl: string = 'https://localhost:7077/api/RoomSearch';
-  bookingsFunctionUrl: string = 'https://localhost:7077/api/Bookings';
+  //uncomment the following when testing locally
+  // roomSearchFunctionUrl: string = 'https://localhost:7077/api/RoomSearch';
+  // bookingsFunctionUrl: string = 'https://localhost:7077/api/Bookings';
+
+  //live api, uncomment once released
+  roomSearchFunctionUrl:string ="https://hotelappazurefunction20220928155452.azurewebsites.net/api/RoomSearch?code=RjqIpz8OCSKwFVBlU5m9fO0sk8aDxdX9-UOZ_5Kk-W2gAzFuUnnlCA==";
+  bookingsFunctionUrl:string = "https://hotelappazurefunction20220928155452.azurewebsites.net/api/Bookings?code=aT-EowUWQBMpFsQiH18SDpfER21dHYC-NI3eKVgXdIExAzFuH9HlsQ==";
 
   private availableRoomsSrc = new BehaviorSubject<AvailableRooms>({
     id: 0,
