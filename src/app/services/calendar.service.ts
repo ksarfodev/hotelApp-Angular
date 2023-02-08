@@ -3,42 +3,43 @@ import { PreferredDates } from '../interfaces/preferred-dates';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CalendarService {
+  constructor() {}
 
-  constructor() { }
-
-  currentDate =  new Date(Date.now());
+  currentDate = new Date(Date.now());
 
   private dateSource = new BehaviorSubject<PreferredDates>({
-    startdate: new  Date(Date.now()),
-    enddate: new Date(this.currentDate.setDate(this.currentDate.getDate()+1)),
+    startdate: new Date(Date.now()),
+    enddate: new Date(this.currentDate.setDate(this.currentDate.getDate() + 1)),
   });
 
   preferredDates = this.dateSource.asObservable();
 
-  setDates(dateSource:PreferredDates){
+  setDates(dateSource: PreferredDates) {
     this.dateSource.next(dateSource);
   }
 
-  getDates(){
-    this.dateSource.value.startdate = this.removeTime(this.dateSource.value.startdate);
-    this.dateSource.value.enddate = this.removeTime(this.dateSource.value.enddate);
+  getDates() {
+    this.dateSource.value.startdate = this.removeTime(
+      this.dateSource.value.startdate
+    );
+    this.dateSource.value.enddate = this.removeTime(
+      this.dateSource.value.enddate
+    );
 
-    console.log('Date '+ this.dateSource.value.startdate);
+    console.log('Date ' + this.dateSource.value.startdate);
     return this.dateSource;
   }
 
   removeTime(date = new Date()) {
-
     return new Date(
-      date.toLocaleString('en-US',{
-        year:'numeric',
-        month:'2-digit',
-        day:'2-digit'
-  
+      date.toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
       })
-      );
+    );
   }
 }

@@ -10,8 +10,6 @@
     box-sizing: border-box;
 }
 
-
-
 body::after {
     content: '';
     position: absolute;
@@ -36,8 +34,6 @@ body::after {
     font-family: Montserrat;
     font-weight: 800;
 }
-
-
 
 header {
     grid-area: header;
@@ -83,7 +79,6 @@ h1 {
     margin: 15px;
 }
 
-
 @media only screen and (max-width:733px) {
 
     .flex-button {
@@ -113,7 +108,6 @@ h1 {
 }
 
 .flex-button {
-    /* background-color: rgb(156, 156, 156); */
     margin: 5px 5px;
     padding: 0 5px;
     width: 200px;
@@ -207,7 +201,6 @@ h1 {
     left: 0;
     max-width: 3492px;
     height: 100vh;
-  //  z-index: -1;
     filter: blur(0px);
     font-family: 'Montserrat',sans-serif;
 }
